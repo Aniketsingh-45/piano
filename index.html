@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎹 Bollywood Piano</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎹 Bollywood / Hindi Piano</h1>
+    <p class="subtitle">Play Bollywood and Hindi melodies with your keyboard or a click.</p>
+
+    <div class="piano">
+      <!-- White & Black keys -->
+      <div class="key white" data-key="A" data-note="C4">
+        <span class="key-label">A</span>
+        <span class="sargam-label">Sa</span>
+      </div>
+      <div class="key black" data-key="W" data-note="C#4">
+        <span class="key-label">W</span>
+        <span class="sargam-label">Komal Re</span>
+      </div>
+      <div class="key white" data-key="S" data-note="D4">
+        <span class="key-label">S</span>
+        <span class="sargam-label">Re</span>
+      </div>
+      <div class="key black" data-key="E" data-note="D#4">
+        <span class="key-label">E</span>
+        <span class="sargam-label">Komal Ga</span>
+      </div>
+      <div class="key white" data-key="D" data-note="E4">
+        <span class="key-label">D</span>
+        <span class="sargam-label">Ga</span>
+      </div>
+      <div class="key white" data-key="F" data-note="F4">
+        <span class="key-label">F</span>
+        <span class="sargam-label">Ma</span>
+      </div>
+      <div class="key black" data-key="T" data-note="F#4">
+        <span class="key-label">T</span>
+        <span class="sargam-label">Tivra Ma</span>
+      </div>
+      <div class="key white" data-key="G" data-note="G4">
+        <span class="key-label">G</span>
+        <span class="sargam-label">Pa</span>
+      </div>
+      <div class="key black" data-key="Y" data-note="G#4">
+        <span class="key-label">Y</span>
+        <span class="sargam-label">Komal Dha</span>
+      </div>
+      <div class="key white" data-key="H" data-note="A4">
+        <span class="key-label">H</span>
+        <span class="sargam-label">Dha</span>
+      </div>
+      <div class="key black" data-key="U" data-note="A#4">
+        <span class="key-label">U</span>
+        <span class="sargam-label">Komal Ni</span>
+      </div>
+      <div class="key white" data-key="J" data-note="B4">
+        <span class="key-label">J</span>
+        <span class="sargam-label">Ni</span>
+      </div>
+      <div class="key white" data-key="K" data-note="C5">
+        <span class="key-label">K</span>
+        <span class="sargam-label">Sa</span>
+      </div>
+    </div>
+
+    <div class="info">
+      <p>White keys: <b>A S D F G H J K</b></p>
+      <p>Black keys: <b>W E T Y U</b></p>
+    </div>
+
+    <div class="hindi-mode">
+      <h2>Bollywood / Hindi Mode</h2>
+      <p>Use the Sargam labels to play Hindi songs and melodies.</p>
+      <div class="controls">
+        <button id="play-sargam" type="button">Play Sargam Scale</button>
+      </div>
+      <p class="hint">Sargam: Sa Re Ga Ma Pa Dha Ni Sa (C4 to C5).</p>
+      <div class="song-player">
+        <h3>Song Library (Practice)</h3>
+        <p class="hint">Original practice patterns inspired by Hindi styles.</p>
+        <div class="controls preset-row">
+          <select id="preset-select" aria-label="Select a practice pattern">
+            <option value="romantic">Romantic Flow (Practice)</option>
+            <option value="sufi">Sufi Loop (Practice)</option>
+            <option value="yaman">Raga Yaman Scale (Practice)</option>
+          </select>
+          <button id="load-preset" type="button">Load</button>
+          <button id="play-preset" type="button">Play Preset</button>
+        </div>
+
+        <h3>Custom Song Player</h3>
+        <p class="hint">
+          Paste Sargam or notes. Example: <b>Sa Re Ga Ma | Pa Dha Ni Sa'</b> or
+          <b>C4 D4 E4 F4 G4 A4 B4 C5</b>. Use <b>-</b> for a rest.
+        </p>
+        <p class="hint">Komal: Re/Ga/Dha/Ni (e.g., <b>Komal Re</b> or <b>Reb</b>). Tivra: <b>Ma#</b>.</p>
+        <textarea id="song-input" rows="3" placeholder="Example: Sa Re Ga Ma | Pa - Dha Ni Sa'"></textarea>
+        <div class="controls song-controls">
+          <label class="tempo">
+            Tempo (ms)
+            <input id="tempo" type="number" min="140" max="800" value="320" />
+          </label>
+          <label class="toggle">
+            <input id="loop-song" type="checkbox" />
+            Loop
+          </label>
+          <button id="play-song" type="button">Play Song</button>
+          <button id="stop-song" type="button">Stop</button>
+          <button id="clear-song" type="button">Clear</button>
+        </div>
+        <p id="song-error" class="error" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
